@@ -10,17 +10,21 @@
 
 # 达成度
 * 查看[Demo](http://codepen.io/StevenYuysy/details/XdjwGY/)
+
 ### html布局
 * 此次demo并没有应用到html5中的语义化标签，只是用了div达到效果
+
 ### 浮动布局
 * 为了适应不同的页面大小，这里使用了媒体查询，使得阅读更加的方便
 * 中间的自适应宽度是通过``overflow:hidden``，在两边的div元素渲染完以后开始渲染自身撑满整个页面，形成BFC元素
 * 最外面的容器用了``overflow:auto``来清除左右两边的浮动，使得高度能与子元素的最高高度想匹配
+
 ### 盒模型
 * 由于强调了盒模型内边距必须为``20px``，而且还有边框宽度，在没有使用``box-sizing``的情况下，实际在给盒子设置宽度盒外边距时，需经过计算使最后结果达到目的
 * 在设置外边距时，要注意到box之间存在外边距重叠
 
 # 学习笔记
+
 ### 盒模型
 * 一张图看懂盒模型
 ![css box model](img/css-box-model-border-content_590x328.jpg)
@@ -50,18 +54,18 @@
 * 双飞翼布局
     * 双飞翼布局主要利用了浮动、负边距、相对定位三个布局属性，使三列布局就像小鸟一样，拥有中间的身体和两侧的翅膀，并且浏览器兼容性非常好，带IE6。
     * 首先有如下所示布局
-![](img/双1.png)
+    * ![](img/双1.png)
     * 首先我们将中间元素放在文档流最前面优先渲染，然后使其向左浮动，并设置 width 为 100%
-![](img/双2.png)
+    * ![](img/双2.png)
     * 此时中间元素撑满整个页面，然后给小鸟加上双翼，将左右两列元素均设为左浮动，然后通过调整负边距将其定位在各自的位置上
-![](img/双3.png)
+    * ![](img/双3.png)
     * 此时会发现，中间元素的虽然撑开了，但是会和左右两边重叠，那怎么办呢？只需要在中间裹上一层元素就可以解决这个问题了，完成以后，调整左右边距便可以达到我们想要的效果。
-![](img/双4.png)
+    * ![](img/双4.png)
 
 * flex布局
     * flex可以用来制作弹性布局，方法很简单，在主容器设置``display:flex``，在需要自适应的部分依比例将flex值设置为1，2，3等整数即可，具体demo可以查看MDN
-    * 缺点时兼容性不太好
-###文章参考
+    * 缺点是兼容性不太好
 
-        [MDN-float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
-        [cnblog](http://www.cnblogs.com/honoka/p/5161836.html)
+###文章参考
+* [MDN-float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
+* [cnblog](http://www.cnblogs.com/honoka/p/5161836.html)
